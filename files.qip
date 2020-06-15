@@ -35,3 +35,5 @@ set_global_assignment -name VHDL_FILE rtl/types.vhd
 set_global_assignment -name VHDL_FILE rtl/util/clock_divider.vhd
 set_global_assignment -name VHDL_FILE rtl/util/download_buffer.vhd
 set_global_assignment -name VHDL_FILE rtl/util/edge_detector.vhd
+set_global_assignment -name VERILOG_FILE rtl/joydb9md.v
+set_global_assignment -name VERILOG_FILE rtl/joydb15.v

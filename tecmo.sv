@@ -184,6 +184,7 @@ wire locked;
 
 pll pll
 (
+  .rst(RESET),
   .refclk(CLK_50M),
   .outclk_0(clk_sys),
   .outclk_1(clk_sdram),

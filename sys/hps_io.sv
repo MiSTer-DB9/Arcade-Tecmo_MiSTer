@@ -48,7 +48,6 @@ module hps_io #(parameter STRLEN=0, PS2DIV=0, WIDE=0, VDNUM=1, PS2WE=0)
 	output reg [15:0] joystick_analog_3,
 	output reg [15:0] joystick_analog_4,
 	output reg [15:0] joystick_analog_5,
-	input      [15:0] joy_raw,
 
 	// paddle 0..255
 	output reg  [7:0] paddle_0,
@@ -307,9 +306,6 @@ always@(posedge clk_sys) begin
 		end else begin
 
 			case(cmd)
-				 // Reading user_io raw joy
-				'h0f: io_dout <= joy_raw;
-
 				// buttons and switches
 				'h01: cfg <= io_din;
 				'h02: if(byte_cnt==1) joystick_0[15:0] <= io_din; else joystick_0[31:16] <= io_din;
@@ -897,5 +893,18 @@ always @(posedge clk_100) begin
 		vtime <= 0;
 	end
 end
+
+endmodule
+
+module confstr_rom #(parameter CONF_STR, STRLEN)
+(
+	input      clk_sys,
+	input      [$clog2(STRLEN+1)-1:0] conf_addr,
+	output reg [7:0] conf_byte
+);
+
+wire [7:0] rom[STRLEN];
+initial for(int i = 0; i < STRLEN; i++) rom[i] = CONF_STR[((STRLEN-i)*8)-1 -:8];
+always @ (posedge clk_sys) conf_byte <= rom[conf_addr];
 
 endmodule

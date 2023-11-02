@@ -1755,7 +1755,6 @@ emu emu
 	.UART_DTR(uart_dsr),
 	.UART_DSR(uart_dtr),
 
-	.USER_OSD(user_osd),
 	.USER_MODE(user_mode),
 	.USER_OUT(user_out),
 	.USER_IN(user_in)

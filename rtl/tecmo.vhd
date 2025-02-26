@@ -106,7 +106,7 @@ entity tecmo is
     -- audio data
     audio : out audio_t
   );
-end tecmo;
+end;
 
 architecture arch of tecmo is
   -- the number of banks in program ROM #2

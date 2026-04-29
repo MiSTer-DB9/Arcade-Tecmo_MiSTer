@@ -184,6 +184,12 @@ module emu
 	// 1 - D-/TX
 	// 2..6 - USR2..USR6
 	// Set USER_OUT to 1 to read from USER_IN.
+	// [MiSTer-DB9 BEGIN] - DB9/SNAC8 support
+	output	USER_OSD,
+	// [MiSTer-DB9 END]
+	// [MiSTer-DB9 BEGIN] - DB9/SNAC8 support: per-pin push-pull mask
+	output	[7:0] USER_PP,
+	// [MiSTer-DB9 END]
 	input	[7:0] USER_IN,
 	output	[7:0] USER_OUT,
 	input         OSD_STATUS

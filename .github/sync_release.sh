@@ -12,7 +12,7 @@ CORE_NAME=(Arcade-Tecmo)
 MAIN_BRANCH="master"
 COMPILATION_INPUT=(Arcade-Tecmo.qpf)
 COMPILATION_OUTPUT=(output_files/Arcade-Tecmo.rbf)
-QUARTUS_IMAGE="theypsilon/quartus-lite-c5:17.1.docker0"
+QUARTUS_IMAGE="theypsilon/quartus-lite-c5:17.0.2.docker0"
 
 # [MiSTer-DB9 BEGIN] - fork-only cores have no upstream; sync_release is a no-op
 if [[ -z "${UPSTREAM_REPO}" ]]; then

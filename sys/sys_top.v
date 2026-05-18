@@ -1873,6 +1873,9 @@ emu emu
 	.UART_DTR(uart_dsr),
 	.UART_DSR(uart_dtr),
 
+	// [MiSTer-DB9 BEGIN] - DB9/SNAC8 support: USER_OSD hookup
+	.USER_OSD(user_osd),
+	// [MiSTer-DB9 END]
 	// [MiSTer-DB9 BEGIN] - DB9/SNAC8 support: USER_PP hookup (per-pin push-pull mask)
 	.USER_PP(user_pp),
 	// [MiSTer-DB9 END]
